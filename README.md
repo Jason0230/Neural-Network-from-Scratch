@@ -110,7 +110,7 @@ $\delta^{[l]} = (\sigma'(z^{[l]}))^T \odot \nabla_{a^{[l]}} C$
 
 Otherwise:
 
-$\delta^{[l]} = J\hspace*{1mm}\nabla_{a^{[l]}} C$
+$\delta^{[l]} = J\hspace {1mm}\nabla_{a^{[l]}} C$
 
 Where $J$ is the Jacobian Matrix resulting from $\frac{\partial a^{[l]}}{\partial z^{[l]}}$
 
@@ -122,7 +122,7 @@ $\delta^{[l]} = (W^{[l+1]})^T\delta^{[l+1]} \odot \sigma'(z^{[l]})$
 
 Otherwise:
 
-$\delta^{[l]} = J\hspace*{1mm}(W^{[l+1]})^T\delta^{[l+1]}$
+$\delta^{[l]} = J(W^{[l+1]})^T\delta^{[l+1]}$
 
 Where $J$ is the Jacobian Matrix resulting from $\frac{\partial a^{[l]}}{\partial z^{[l]}}$
 
@@ -160,8 +160,8 @@ The Model would be tested against a TensorFlow Equivalent. All architectural and
 ### 2. Results:
 
 ### Loss Curves
-![Model Loss Graph](figures\Model_Loss_Graph.png) 
-![Tensor Flow Loss Graph](figures\Tensor_Loss_Graph.png)
+![Model Loss Graph](figures/Model_Loss_Graph.png) 
+![Tensor Flow Loss Graph](figures/Tensor_Loss_Graph.png)
 
 The training and validation loss curves for both the custom NumPy implementation and the reference model implemented using TensorFlow are shown in the accompanying figures.
 
@@ -171,7 +171,7 @@ The NumPy implementation exhibits **higher validation loss** and **slower conver
 
 ### Comparing Training Loss Curves
 
-![Training Loss Graph](figures\Training_Loss_Graph.png)
+![Training Loss Graph](figures/Training_Loss_Graph.png)
 
 When comparing training loss directly between the two models, both demonstrate:
 
@@ -183,7 +183,7 @@ However the TensorFlow model converges more efficiently, which is expected given
 
 ### Comparing Validation Loss Curves
 
-![Validation Loss Graph](figures\Validation_Loss_Graph.png)
+![Validation Loss Graph](figures/Validation_Loss_Graph.png)
 
 Validation loss trends closely mirror training loss behavior. Both models show decreasing validation loss over time, indicating that learning generalizes beyond the training set.
 
