@@ -1,7 +1,7 @@
 # Neural Network From Scratch
 
 ## Overview 
-A fully connected Neural Network implemented from scratch only using NumPy as a major python library, with batch training and backpropagation
+A fully connected Neural Network implemented from scratch, only using NumPy as a major Python library, with batch training and backpropagation
 The implementation is validated by comparing loss metrics against an equivalent TensorFlow Model
 
 ## Features
@@ -11,7 +11,7 @@ The implementation is validated by comparing loss metrics against an equivalent 
 - Supports multiple loss functions (Mean Squared Error, Mean Absolute Error, Categorical Crossentropy, Sparse Categorical Crossentropy)
 - Supports multiple optimizers (Momentum, RMSProp, Adam)
 - Tracks the history of Loss and Validation in each Epoch
-- Currently only supports list of vectors as inputs and outputs a list of column vectors
+- Currently only supports a list of vectors as inputs and outputs a list of column vectors
 
 ## Project Structure
 
@@ -57,7 +57,7 @@ The Model supports multiple layers where the network object serves as a containe
 ### Component Breakdown
 - Network Container: Manages a list of Layers, handles coordination between forward pass (predicting) and backward pass (learning).
 - Layer Object: Each layer is a self-contained unit that maintains:
-    - Weights and Biases: Stored as numpy matrices, weight matrix is initialized using HE initialzation and bias vector is initialized to zeros
+    - Weights and Biases: Stored as numpy matrices, the weight matrix is initialized using HE initialization and the bias vector is initialized to zeros
     - State: Stores the resulting activation and previous activation for backpropagation calculations
 
 ### Data Flow
@@ -66,8 +66,8 @@ The Model supports multiple layers where the network object serves as a containe
 - Activation: A non-linear activation function is applied to $Z$, becoming the input for the next layer
 - Output: The Final layer produces the prediction of shape ```(batch_size, output_features)```
 
-### Backpropgation Mechanism
-#### Using Chain Rule each layer is responsible for calculating two gradients during backward pass
+### Backpropagation Mechanism
+#### Using the Chain Rule, each layer is responsible for calculating two gradients during the backward pass
 - Gradient with respect to Weights/Biases ($\frac{\partial C}{\partial W^l}$, $\frac{\partial C}{\partial B^l}$): Used by the optimizer to update weights
 
 - Gradient with respect to activation ($\delta^l$ or $\frac{\partial C}{\partial z^l}$): Passed backward to the previous layer to calculate Gradients for that layer
@@ -95,11 +95,11 @@ To measure the "error" of the network, A loss function is used on the predicted 
 
 For one sample:
 
-$ C = -\sum_{j=1}^{N} y_j\log(\hat{y_j})$
+$C = -\sum_{j=1}^{N} y_j\log(\hat{y_j})$
 
 Where:
-- $N$ represents the number of classications
-- $y_j$ represents the expected the value of the $jth$ classification
+- $N$ represents the number of classifications
+- $y_j$ represents the expected value of the $jth$ classification
 - $\hat{y_j}$ represents the predicted value of the $jth$ classification
 
 ### 3. Backpropgation 
@@ -155,9 +155,9 @@ The Model would be tested against a TensorFlow Equivalent. All architectural and
     - Input Layer: 784 Inputs
     - Hidden Layer: 64 Units, Activation: **ReLU**
     - Output Layer: 10 Units, Activation: **Softmax**
-- Models will be using the same Training, Validation and Testing Data.
+- Models will be using the same Training, Validation, and Testing Data.
 - Models will be trained with **32** batch sizes and **8** epochs
-- Classification Cross Entropy will be the loss function
+- Classification Cross-Entropy will be the loss function
 - Adam will be the chosen optimizer
 
 ### 2. Results:
@@ -168,7 +168,7 @@ The Model would be tested against a TensorFlow Equivalent. All architectural and
 
 The training and validation loss curves for both the custom NumPy implementation and the reference model implemented using TensorFlow are shown in the accompanying figures.
 
-Across all epochs, both models exhibit similar **training loss convergence behavior**, Training loss decreasing sharply then slowly shows the optimizer is working correctly and the model is learning.
+Across all epochs, both models exhibit similar **training loss convergence behavior**, Training loss decreasing sharply, then slowly shows the optimizer is working correctly and the model is learning.
 
 The NumPy implementation exhibits **higher validation loss** and **slower convergence** compared to the TensorFlow model. This behavior is expected due to differences in numerical optimization, hardware acceleration, and default hyperparameter tuning present in TensorFlow.  Importantly, the loss curves for both models follow similar trends, indicating that the underlying forward and backward propagation logic is correct. Performance could potentially be improved by refining initialization schemes or implementing additional numerical optimizations.
 
@@ -182,7 +182,7 @@ When comparing training loss directly between the two models, both demonstrate:
 - Gradual convergence over later epochs
 - No signs of divergence or instability
 
-However the TensorFlow model converges more efficiently, which is expected given its optimized and low-level performance enhancements. The similarity in loss trajectories suggests that the forward and backward propagation logic in the custom implementation is mathematically correct.
+However, the TensorFlow model converges more efficiently, which is expected given its optimized and low-level performance enhancements. The similarity in loss trajectories suggests that the forward and backward propagation logic in the custom implementation is mathematically correct.
 
 ### Comparing Validation Loss Curves
 
