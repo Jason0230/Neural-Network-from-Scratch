@@ -1,0 +1,2 @@
+Tensorflow Accuracy: 97.14%
+Neural Network from Scratch Accuracy: 96.85000000000001%
