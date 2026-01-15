@@ -30,8 +30,11 @@ Neural Network From Scratch/
 
 - Python 3.9+
 - NumPy
-- Matplotlib (for visualization)
-- TensorFlow (only required for comparison experiments)
+- Seaborn       (for visualizations)
+- Pandas        (seaborn dependency)
+- Matplotlib    (seaborn dependency)
+- TensorFlow    (only required for comparison experiments)
+- scikit-learn  (accuracy and confusion matrices)
 
 Install dependencies using:
 
